@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mr-rafay
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: RAFAY_TOKEN
+        sync: false
+      - key: NTFY_TOPIC
+        sync: false
+      - key: APPROVAL_MODE
+        value: queue

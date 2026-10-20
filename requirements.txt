@@ -1,0 +1,10 @@
+anthropic>=0.40.0
+fastapi>=0.110
+uvicorn>=0.29
+python-dotenv>=1.0
+requests>=2.31
+# Sirf PC par (voice + screenshot):
+# SpeechRecognition
+# PyAudio
+# pyttsx3
+# pyautogui
