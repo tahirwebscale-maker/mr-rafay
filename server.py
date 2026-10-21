@@ -61,3 +61,7 @@ async def meta_in(request: Request, bg: BackgroundTasks):
         raise HTTPException(403)
     bg.add_task(meta_inbound, json.loads(raw))
     return {"ok": True}
+@app.post("/api/chat")
+def chat(q: Q, authorization: str = Header("")):
+    """Text chat route: {"text": "..."} -> {"reply": "..."}"""
+    return command(q, authorization)
